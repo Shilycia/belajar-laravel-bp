@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: 'Outfit';
+        }
+
+        ::-webkit-scrollbar{
+            display: none;
+        }
+
+        body{
+            width: 100%;
+            height: 100vh;
+            background: url('../asset/bgloop.jpg');
+            background-size: auto;
+            background-position: center;
+            overflow-x: hidden;
+            display: grid;
+            justify-items: center;
+            padding-bottom: 1px;
+        }
+
+        .container{
+            display: grid;
+            margin-top: 5%;
+            width: 70%;
+            height: 100vh;
+            background-color: gray;
+            border-radius: 50px;
+            border: 1px solid gray;
+            box-shadow: 0px 8px 12px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        nav{
+            display: flex;
+            align-items: center;
+            color: white;
+            margin-top: 5%;
+            width: 70%;
+            height: 12vh;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 100px;
+            border: 1px solid gray;
+            box-shadow: 0px 8px 12px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .id{
+            color: white;
+            margin-left: 5%;
+            font-family: 'Outfit';
+            font-size: 9vh;
+            text-shadow: 0 0 5px #fff, 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px #ffffff;
+            animation: flickerWhite 4s alternate;
+        }
+
+        .id1{
+            color: white;
+            margin-left: 5%;
+            font-family: 'Outfit';
+            font-size: 9vh;
+            text-shadow: 0 0 5px #fff, 0 0 10px #0000ff, 0 0 20px #0000ff, 0 0 30px #0000ff;
+            animation: flickerBlue 1s alternate-reverse;
+        }
+
+        .reg{
+            color: white;
+            transform: translateY(-20px);
+            font-size: 3vh;
+        }
+
+        .id-content{
+            margin-left: 5%;
+            margin-top: 20px;
+            display: flex;
+            text-shadow: 0 0 5px #fff, 0 0 10px #0000ff, 0 0 20px #0000ff, 0 0 30px #0000ff;
+            animation: flickerBlue 3s alternate-reverse;
+        }
+
+        @keyframes flickerRed {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 1;
+            }
+            20%, 24%, 55% {
+                opacity: 0.5;
+            }
+            22%, 53% {
+                opacity: 0.2;
+            }
+        }
+
+        @keyframes flickerBlue {
+            0%, 5%, 10%, 15%, 25%, 50%, 75%, 90%, 100% {
+                opacity: 1;
+            }
+            6%, 16%, 35%, 55%, 80% {
+                opacity: 0.4;
+            }
+            20%, 40%, 60% {
+                opacity: 0.1;
+            }
+        }
+
+        @keyframes flickerWhite {
+            0%, 18%, 36%, 54%, 72%, 90%, 100% {
+                opacity: 1;
+            }
+            10%, 28%, 46%, 64%, 82% {
+                opacity: 0.3;
+            }
+            5%, 23%, 41%, 59%, 77%, 95% {
+                opacity: 0.1;
+            }
+        }
+
+        .reg-content{
+            color: white;
+            margin-top: 4px;
+            font-size: 5vh;
+
+        }
+
+        .navigation{
+            margin-left: 5%;
+            font-size: small;
+        }
+
+        nav img{
+            filter: invert(1);
+            width: 4vh;
+            height: 3vh;
+            margin-left: 20%;
+        }
+
+        .reglogo{
+            font-size: 4vh;
+        }
+
+        footer{
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin-top: 5%;
+            width: 70%;
+            height: 17vh;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 100px;
+            border: 1px solid gray;
+            box-shadow: 0px 8px 12px 0 rgba(0, 0, 0, 0.37);
+        }
+        
+        .containerweather{
+            display: grid;
+            right: 0;
+            text-align: end;
+            margin-left: 5%;
+        }
+
+        .titleweather{
+            display: grid;
+            font-weight: bold;
+        }
+
+        .subweather{
+            font-size: 1.5vh;
+        }
+
+        .img-tshirt{
+            width: 15vh;
+            height: 15vh;
+            border-radius: 50%;
+            margin-top: 0.5vh;
+            margin-left: 1.5vh;
+        }
+
+        .zoom{
+            position: absolute;
+            width: 6vh;
+            height: 6vh;
+            translate: 12vh -7vh;
+            border-radius: 50%;
+            background-color: grey;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .zoom img{
+            width: 3vh;
+            height: 3vh;
+            filter: invert(1);
+        }
+
+        .name-content{
+            color: white;
+            font-size: 4.5vh;
+            width: 35vh;
+            text-align: start;
+            margin-left: 6%;
+        }
+
+        .name-content img{
+            position: absolute;
+            width: 25px;
+            filter: invert(1);
+            translate: 10px 10px;
+        }
+
+        .genre{
+            color: white;
+            display: grid;
+            text-align: start;
+            margin-top: 25px;
+            margin-left: 5%;
+            margin-bottom: auto;
+        }
+
+        .arrow-bottom{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 11vh;
+            height: 11vh;
+            border-radius: 50%;
+            border: 1px solid white;
+            margin-right: 4vh;
+            margin-left: auto;
+        }
+
+        .arrow-bottom img{
+            filter: invert(1);
+            width: 4vh;
+            height: 4vh;
+        }
+
+        .container-content1{
+            display: flex;
+            width: 100%;
+            height: 30vh;
+            border-top-left-radius: 50px;
+            border-top-right-radius: 50px;
+        }
+
+        .container-content2{
+            display: flex;
+            width: 100%;
+            height: 70vh;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+
+        .image2{
+            width: 65%;
+            height: 70vh;
+            border-top-left-radius: 50px;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            background: url('../asset/geometric-pattern-spiral-neon-gradient-black-background-5k-7595x3840-1202.png');
+            background-size: cover;
+            background-position: center;
+            
+        }
+
+        .image1{
+            width: 35%;
+            height: 70vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        .number{
+            align-self: center;
+            color: white;
+            font-size: 22vh;
+            margin-left: 10%;
+            text-shadow: 0 0 5px #fff, 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000;
+            animation: flickerRed 2s infinite alternate;
+            
+        }
+
+        .describe1{
+            display: grid;
+            height: 10vh;
+            font-size:  8px;
+            color: white;
+            margin-top: 4vh;
+            margin-left: 5%;
+        }
+
+        .describe2{
+            display: grid;
+            height: 10vh;
+            font-size:  8px;
+            color: white;
+            margin-top: 4vh;
+            margin-left: 5%;
+        }
+
+        .login-button{
+            margin-left: 7%;
+            margin-top: 4lvh;
+            display: flex;
+        }
+
+        .login-text{
+            width: 15vh;
+            height: 8vh;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            border-radius: 100px;
+            justify-content: center;
+        }
+
+        .logo-login{
+            width: 8vh;
+            height: 8vh;
+            border-radius: 50%;
+            translate: -6px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+        }
+
+        .logo-login img{
+            width: 4vh;
+            height: 4vh;
+        }
+
+        .image-side{
+            width: 70%;
+            height: 50vh;
+        }
+
+        .main-image-side{
+            width: 100%;
+            height: 50vh;
+            background: url('../asset/bgside.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 40px;
+        }
+
+        .zoom-side{
+            position: absolute;
+            width: 6vh;
+            height: 6vh;
+            border-radius: 50%;
+            background-color: gray;
+            translate: 24.8vh -11.3vh;
+            z-index: 1;
+        }
+
+        .main-image-side::before{
+            position: absolute;
+            width: 25.3vh;
+            height: 10.5vh;
+            border-top-right-radius: 34px;
+            box-shadow: 100px 20px gray;
+            content: '';
+            z-index: 1;
+            border-bottom-right-radius: 40px;
+            translate: 0vh 39.7vh;
+        }
+        .main-image-side::after{
+            position: absolute;
+            width: 9vh;
+            height: 20vh;
+            content: '';
+            translate: 26.6vh 18.8vh;
+            box-shadow: 10px 100px gray;
+            border-bottom-right-radius: 40px;
+        }
+
+        span{
+            display: flex;
+            align-items: center;
+            z-index: 1;
+            border-radius: 50%;
+            translate: 28vh -8vh;
+            justify-content: center;
+            width: 7vh;
+            height: 7vh;
+            position: absolute;
+            background-color: white;
+        }
+
+        span img{
+            width: 4vh;
+            height: 4vh; 
+        }
+
+        .search{
+            position: absolute;
+            width: 17%;
+            height: 8vh;
+            background-color: white;
+            border-radius: 40px;
+            translate: 0px 53vh;
+            z-index: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <label for="" class="id">02</label>
+        <label for="" class="reg">&#174;</label>
+        <label for="" class="navigation">Moonish</label>
+        <label for="" class="navigation">New in</label>
+        <label for="" class="navigation">Hot drops</label>
+        <label for="" class="navigation">Collection</label>
+        <img src="../asset/globe.png" alt="">
+        <label for="" class="reglogo">&#174;</label>
+        <div class="containerweather">
+            <div class="titleweather">
+                <label for="" class="title">02 Shop</label>
+                <label for="" class="title">New Collection</label>
+            </div>
+            <div class="subweather">
+                <label for="">Moonish</label>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="container-content1">
+            <div class="id-content">
+                <label for="" class="id1">02</label>
+                <label for="" class="reg-content">&#174;</label>
+            </div>
+            <div class="number">
+                <label for="">01</label>
+            </div>
+            <div class="describe1">
+                <label for="">CLASSIC HOODIE</label>
+                <label for="">BY 02 STUDIO</label>
+                <br><label for="">THE LATE 2050</label>
+                <br><label for="">DETAILS</label>
+                <label for="">OZ LOGO AT LEFT CHEST</label>
+                <label for="">ZIPPERED HAND POCKETS</label>
+                <label for="">3 COLORS</label>
+                <br><label for="">MOONISH DESIGN</label>
+            </div>
+            <div class="describe2">
+                <label for="">LINING</label>
+                <label for="">53% COTTON</label>
+                <label for="">47% POLYESTER</label>
+                <br>
+                <label for="">POCKET BAG</label>
+                <label for="">100% COTTON</label>
+            </div>
+            <div class="login-button">
+                <div class="login-text">
+                    <label for="">Log in</label>
+                </div>
+                <div class="logo-login">
+                    <img src="../asset/globe.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="container-content2">
+            <div class="image1">
+                <div class="image-side">
+                    <div class="main-image-side">
+                        
+                    </div>
+                    <div class="zoom-side">
+    
+                    </div>
+                    <span>
+                        <img src="../asset/zoom-in.png" alt="">
+                    </span>
+                </div>
+                <div class="search">
+                    <div class="image-search">
+                        <img src="" alt="">
+                    </div>
+                    <label for=""></label>
+                    <label for=""></label>
+                </div>
+
+            </div>
+            <div class="image2">
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="content-tshirt">
+            <img class="img-tshirt" src="../asset/2.jpg" alt="">
+            <div class="zoom">
+                <img src="../asset/zoom-in.png" alt="">
+            </div>
+        </div>
+        <div class="name-content">
+            <label for="">NEW . COSMI&#169; SET 23</label>
+            <img src="../asset/arrow1.png" alt="">
+        </div>
+        <div class="genre">
+            <label for="">
+                HOT DROP
+            </label>
+            <label for="">
+                BY 02 STUDIO                
+            </label>
+            <label for="">
+                2023
+            </label>
+        </div>
+        <div class="genre">
+            <label for="">
+                MOONISH
+            </label>
+            <label for="">
+                COLLECTION
+            </label>
+        </div>
+        <div class="arrow-bottom">
+            <img src="../asset/arrow1.png" alt="">
+        </div>
+    </footer>
+    <div style="margin-top: 5%; width: 100%; height: 1vh;"></div>
+</body>
+</html>

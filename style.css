@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'mountain';
+    src: url("asset/Mountain.ttf") format('truetype');
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.container{
+    height: 100vh;
+    overflow-x: hidden;
+    perspective: 20px;
+}
+
+.parallax{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("asset/layer.png");
+    background-size: cover;
+    background-position: center;
+    transform: translateZ(-30px) (1.);
+}
+
+.content {
+    position: sticky;
+    color: white;
+    text-shadow: 0px 0px 10px gray;
+    font-size: 10vh;
+    font-family: 'mountain', sans-serif;
+    top: 45%;
+    left: 36%;
+    animation: mover 1s alternate infinite;
+}
+
+
+@keyframes mover {
+    0% { transform: translateZ(7px) translateY(0); }
+    100% { transform: translateZ(7px) translateY(-15px); }
+}
+
+.static{
+    height: 60vh;
+    background-image: linear-gradient(
+        to bottom,
+        transparent,
+        #1B2735 50px
+    );
+    transform: translateZ(15px) translateY(10px) ;
+    display: flex;
+    color: white;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'mountain', sans-serif;
+}
+
+.pohon{
+    position: absolute;
+    width: 25%;
+    transform: translateZ(15px)translateY(260px);
+}
+
+.gunungkecil{
+    position: absolute;
+    width: 60%;
+    transform: translateZ(12px)translateY(180px);
+}
+
+.gunungsedang{
+    position: absolute;
+    width: 70%;
+    transform: translateZ(9px)translateY(160px);
+}
+
+.gunungutama{
+    position: absolute;
+    width: 80%;
+    transform: translateZ(6px) translateY(140px);
+}
+
+.gunungbelakang{
+    position: absolute;
+    width: 90%;
+    transform: translateZ(3px) translateY(120px);
+}
